@@ -1,7 +1,14 @@
 :root {
-  --main-color: #ffc8dd;
-  --support-color: #a2d2ff;
-  --support-color-alt: #bde0fe;
+  --main-color: #f8f9fa;
+  --support-color: #212529;
+  --support-color-alt: #03045e;
+  --hover-state: #d00000;
+  --background: rgb(241, 250, 238);
+  --gradient: radial-gradient(
+    circle,
+    rgba(241, 250, 238, 1) 0%,
+    rgba(248, 249, 250, 1) 100%
+  );
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -16,10 +23,27 @@
   margin: 0;
 }
 
+/* htm font sizing */
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   /* 3. Add accessible line-height */
   line-height: 1.5;
-  background-color: var(--main-color);
+  background: var(--background);
+  background: var(--gradient);
+  /* transform: translateX(-100rem); */
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Reddit Sans', 'Barlow', sans-serif;
+  color: var(--support-color);
+
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
@@ -64,6 +88,7 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  font-weight: 400;
 }
 
 /*
@@ -72,4 +97,49 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+.main {
+  text-align: center;
+  transform: translateY(-250px);
+  opacity: 0;
+  margin: 0 auto;
+}
+
+.image-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-img {
+  display: block;
+  width: 30rem;
+}
+
+.main-heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.download {
+  background-color: var(--support-color-alt);
+  border-radius: 0.5rem;
+  color: var(--main-color);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 2rem 6rem;
+  transform: scale(1);
+  font-size: 2rem;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 0.1rem 0.7rem rgba(0, 0, 0, 0.1);
+}
+
+.main-description {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
