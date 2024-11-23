@@ -2,7 +2,7 @@
   --main-color: #f8f9fa;
   --support-color: #212529;
   --support-color-alt: #03045e;
-  --hover-state: #d00000;
+  --hover-state: #f89920;
   --background: rgb(241, 250, 238);
   --gradient: radial-gradient(
     circle,
@@ -32,17 +32,17 @@ html {
 body {
   /* 3. Add accessible line-height */
   line-height: 1.5;
-  background: var(--background);
-  background: var(--gradient);
+  position: relative;
+  background-image: url('./public/1.jpg');
   /* transform: translateX(-100rem); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 36% 50%;
   font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   font-family: 'Reddit Sans', 'Barlow', sans-serif;
-  color: var(--support-color);
+  color: var(--main-color);
 
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
@@ -99,47 +99,142 @@ h6 {
   isolation: isolate;
 }
 
-.main {
+.header {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   text-align: center;
-  transform: translateY(-250px);
+  background-color: var(--support-color);
+  padding: 1.5rem;
+}
+
+.header-link {
+  display: block;
+}
+
+.search-btn {
+  background-color: var(--hover-state);
+  color: var(--support-color);
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.logo {
+  width: 15rem;
+}
+
+.header-link {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.main {
+  position: absolute;
+  display: block;
   opacity: 0;
-  margin: 0 auto;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  /* right: 0; */
+  z-index: 99;
+  text-align: center;
+}
+
+.container {
+  transform: translateY(-25rem);
+  width: 100%;
 }
 
 .image-container {
-  width: 100%;
+  width: 100vw;
+
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: block;
+  height: 30rem;
 }
 
 .main-img {
   display: block;
-  width: 30rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-description {
+  font-size: 2.5rem;
+}
+
+.header-link.search {
+  display: flex;
+  /* width: 40%; */
+}
+
+.header-link.search > * {
+  outline: none;
+  border: none;
+}
+
+.search {
+  border-radius: 0.3rem 0 0 0.3rem;
+  padding: 0.5rem;
+  box-shadow: inset 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  /* width: 10rem; */
 }
 
 .main-heading {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
 .download {
-  background-color: var(--support-color-alt);
-  border-radius: 0.5rem;
-  color: var(--main-color);
+  background-color: var(--hover-state);
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  color: var(--support-color);
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
   padding: 2rem 6rem;
+  font-weight: 600;
   transform: scale(1);
-  font-size: 2rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
   transition: all 300ms ease-in-out;
   box-shadow: 0 0.1rem 0.7rem rgba(0, 0, 0, 0.1);
 }
 
 .main-description {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.null-state {
+  opacity: 0;
+  transform: translateX(-1rem);
+}
+
+.more-info {
+  margin: 0 0.9rem;
+  font-size: 2.2rem;
+  font-weight: 600;
 }
